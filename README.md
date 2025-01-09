@@ -33,10 +33,15 @@ Secondly, I started the preprocessing:
 Then, I splitted the dataset into train and test.
 
 # Conclusions
-Concerning the modelling part, I adopted a first dummy model as baseline, giving 20% as score prediction on the test set.  
-The second model was a LightGBM with standards hyperparameters, giving a 47% on the validation dataset of the leaderboard.  
-And the final strategy was to automatize the hyperparameter tunning of the model using FLAML. With it, the final score was of 54%. When trained on the hole dataset with a computer with more RAM, it produced a score of 57%.
+Concerning the modelling part, I adopted a first dummy model as baseline, giving 20% as score prediction on the test set. The second model was a LightGBM with standards hyperparameters, giving a 47% on the validation dataset of the leaderboard. And the final strategy was to automatize the hyperparameter tunning of the model using FLAML. With it, the final score was of 54%. When trained on the hole dataset with a computer with more RAM, it produced a score of 57%.   
 The most important features can be seen on the Feature importance chart.
+
+# Observations
+
+Two approaches were tried to see if it could improve the overall model score:  
+- filling missing numerical values with the median  
+- removing less important features from the model traing  
+But none of these strategies improved significantly the model strategy.
 
 
 
