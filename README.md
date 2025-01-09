@@ -41,7 +41,7 @@ The most important features can be seen on the Feature importance chart.
 Two approaches were tried to see if it could improve the overall model score:  
 - filling missing numerical values with the median  
 - removing less important features from the model traing  
-But none of these strategies improved significantly the model strategy.
+But none of these strategies improved significantly the model score.
 
 
 
