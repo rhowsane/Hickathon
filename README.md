@@ -21,3 +21,27 @@ to keep the header, shuffle the rest of the dataset and take 100,000 lines.
 
 ***Obs:*** The train and test datasets exceed git supporting limit. That's why they are not in this repository.  
 
+# Development  
+
+Firstly, I checked the if the prediction labels were unbalanced.  
+
+Secondly, I started the preprocessing: 
+- the columns ending by _INSEE of type object were converted into numeric, 
+- I extracted the year and month of the dates of meteo and piezo, and
+- normalized the `piezo_station_department_code`, for instance, so that 3 will be converted to 03.
+
+Then, I splitted the dataset into train and test.
+
+# Conclusions
+Concerning the modelling part, I adopted a first dummy model as baseline, giving 20% as score prediction on the test set. The second model was a LightGBM with standards hyperparameters, giving a 47% on the validation dataset of the leaderboard. And the final strategy was to automatize the hyperparameter tunning of the model using FLAML. With it, the final score was of 54%. When trained on the hole dataset with a computer with more RAM, it produced a score of 57%.   
+The most important features can be seen on the Feature importance chart.
+
+# Observations
+
+Two approaches were tried to see if it could improve the overall model score:  
+- filling missing numerical values with the median  
+- removing less important features from the model traing  
+But none of these strategies improved significantly the model strategy.
+
+
+
